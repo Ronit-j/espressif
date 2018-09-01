@@ -142,14 +142,17 @@ void my_free(char *x)
   }
 
 }
-
-int main()
+void init()
 {
-  s.next = buffer;
+ s.next = buffer;
   s.size = sizeof(buffer) - 2*sizeof(s);
   s.alloc_status = 'f';
   memcpy(gptr,&s,sizeof(s));
 
+}
+int main()
+{
+	init(); 
   // char *p = my_malloc(4000);
   // printf("%d\n",p);
   // char *q = my_malloc(1000);
